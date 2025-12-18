@@ -31,7 +31,7 @@ export const uploadImage = async(request, response) =>{
     try {
         const info = {
             id: request.params.id,
-            url: `http://localhost:8080/${request.file.filename}`
+            url: `https://testapi-up00.onrender.com/${request.file.filename}`
         };
         await uploadI(info);
         response.status(200).json('S')
