@@ -3,7 +3,7 @@ import { editP, getA, uploadI } from "../models/models.mjs";
 export const getAll = async(request, response) =>{
     try {
         const data = await getA()
-        console.log(request.auth[0])
+        //console.log(request.auth[0])
         response.status(200).json(data)
     } catch (e) {
         console.error(e);
