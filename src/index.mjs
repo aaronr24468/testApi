@@ -7,8 +7,10 @@ import cors from 'cors';
 import { router as infoRouter } from "./router/router.mjs";
 import { router as registerUsers } from "./router/register.mjs";
 import { router as loginUsers } from "./router/login.mjs";
+import { config } from "dotenv";
+config();
 
-
+const puerto = process.env.PORT;
 const app = express();
 
 app.use(cors());
@@ -34,7 +36,7 @@ app.use((err, request, response, next) =>{
         next();
     }
 })
-
+ 
 app.listen(8080, () =>{
-    console.log('Listening to the http://localhost:8080')
+    console.log(`Listening to the http://localhost:${puerto}`)
 })
